@@ -6,6 +6,7 @@ let package = Package(
     name: "xcbz",
     dependencies: [
         .package(url: "https://github.com/apple/swift-argument-parser.git", exact: "1.5.0"),
+        .package(url: "https://github.com/tuist/XcodeProj.git", exact: "8.12.0")
     ],
     targets: [
         .executableTarget(
@@ -18,6 +19,7 @@ let package = Package(
         ),
         .target(
             name: "xcbz_lib",
+            dependencies: ["XcodeProj"],
             path: "Sources/Lib"
         ),
         .testTarget(
