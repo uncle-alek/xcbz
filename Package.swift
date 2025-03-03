@@ -10,24 +10,24 @@ let package = Package(
     ],
     targets: [
         .executableTarget(
-            name: "xcbz_main",
+            name: "xcbz-CLI",
             dependencies: [
-                "xcbz_lib",
+                "xcbz",
                 .product(name: "ArgumentParser", package: "swift-argument-parser")
             ],
-            path: "Sources/Main"
+            path: "Sources/CLI"
         ),
         .target(
-            name: "xcbz_lib",
+            name: "xcbz",
             dependencies: ["XcodeProj"],
-            path: "Sources/Lib"
+            path: "Sources/xcbz"
         ),
         .testTarget(
-            name: "xcbz_lib_tests",
+            name: "xcbz-tests",
             dependencies: [
-                "xcbz_lib"
+                "xcbz"
             ],
-            path: "Tests/Lib"
+            path: "Tests/xcbz"
         )
     ]
 )
